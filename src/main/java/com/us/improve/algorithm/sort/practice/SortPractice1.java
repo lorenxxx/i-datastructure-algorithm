@@ -12,17 +12,17 @@ import com.us.improve.algorithm.sort.ISort;
 public class SortPractice1 implements ISort {
 
     @Override
-    public void bubbleSort(int[] array) {
+    public void bubbleSort(int[] arr) {
 
     }
 
     @Override
-    public void insertSort(int[] array) {
+    public void insertSort(int[] arr) {
 
     }
 
     @Override
-    public void selectSort(int[] array) {
+    public void selectSort(int[] arr) {
 
     }
 

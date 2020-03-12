@@ -12,22 +12,22 @@ public interface ISort {
     /**
      * 冒泡排序
      *
-     * @param array 待排序数组
+     * @param arr 待排序数组
      */
-    void bubbleSort(int[] array);
+    void bubbleSort(int[] arr);
 
     /**
      * 插入排序
      *
-     * @param array 待排序数组
+     * @param arr 待排序数组
      */
-    void insertSort(int[] array);
+    void insertSort(int[] arr);
 
     /**
      * 选择排序
      *
-     * @param array 待排序数组
+     * @param arr 待排序数组
      */
-    void selectSort(int[] array);
+    void selectSort(int[] arr);
 
 }
