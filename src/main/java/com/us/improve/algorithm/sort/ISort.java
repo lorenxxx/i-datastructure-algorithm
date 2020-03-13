@@ -24,6 +24,14 @@ public interface ISort {
     void insertSort(int[] arr);
 
     /**
+     * 希尔排序
+     * 插入排序的改进版本
+     *
+     * @param arr 待排序数组
+     */
+    void shellSort(int[] arr);
+
+    /**
      * 选择排序
      *
      * @param arr 待排序数组

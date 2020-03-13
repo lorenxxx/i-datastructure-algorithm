@@ -22,6 +22,11 @@ public class SortPractice1 implements ISort {
     }
 
     @Override
+    public void shellSort(int[] arr) {
+
+    }
+
+    @Override
     public void selectSort(int[] arr) {
 
     }

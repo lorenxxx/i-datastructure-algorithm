@@ -21,8 +21,12 @@ public class MainTest {
         displayArr(arr2);
 
         int[] arr3 = new int[] {4, 5, 6, 3 , 2, 1, 3};
-        sort.selectSort(arr3);
+        sort.shellSort(arr3);
         displayArr(arr3);
+
+        int[] arr4 = new int[] {4, 5, 6, 3 , 2, 1, 3};
+        sort.selectSort(arr4);
+        displayArr(arr4);
     }
 
     public static void displayArr(int[] arr) {

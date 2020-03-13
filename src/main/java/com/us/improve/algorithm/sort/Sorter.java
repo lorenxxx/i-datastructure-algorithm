@@ -63,6 +63,25 @@ public class Sorter implements ISort {
     }
 
     @Override
+    public void shellSort(int[] arr) {
+        if (arr == null || arr.length <= 1) {
+            return;
+        }
+        
+        for (int step = arr.length / 2; step >= 1; step /= 2) {
+            for (int i = step; i < arr.length; i++) {
+                int tmp = arr[i];
+                int j = i - step;
+                while (j >= 0 && arr[j] > tmp) {
+                    arr[j + step] = arr[j];
+                    j -= step;
+                }
+                arr[j + step] = tmp;
+            }
+        }
+    }
+
+    @Override
     public void selectSort(int[] arr) {
         if (arr == null || arr.length <= 1) {
             return;
