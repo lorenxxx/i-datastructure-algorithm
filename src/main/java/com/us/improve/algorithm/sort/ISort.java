@@ -38,4 +38,27 @@ public interface ISort {
      */
     void selectSort(int[] arr);
 
+    /**
+     * 归并排序
+     *
+     * 递推公式: merge_sort(p...r) = merge(merge_sort(p...q), merge_sort(q + 1 ... q))
+     * 终止条件: p >= r 不用再继续分解
+
+     * 时间复杂度: O(n * logn)
+     * 空间复杂度: O(n)
+     *
+     * @param arr 待排序数组
+     */
+    void mergeSort(int[] arr);
+
+    /**
+     * 快速排序
+     *
+     * 递推公式: quick_sort(p...r) = quick_sort(p...q) + quick_sort(q + 1 ... r)
+     * 终止条件: p >= r
+     *
+     * @param arr 待排序数组
+     */
+    void quickSort(int[] arr);
+
 }

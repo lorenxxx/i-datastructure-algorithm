@@ -31,4 +31,14 @@ public class SortPractice1 implements ISort {
 
     }
 
+    @Override
+    public void mergeSort(int[] arr) {
+
+    }
+
+    @Override
+    public void quickSort(int[] arr) {
+
+    }
+
 }
