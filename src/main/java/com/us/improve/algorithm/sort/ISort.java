@@ -12,12 +12,16 @@ public interface ISort {
     /**
      * 冒泡排序
      *
+     * 时间复杂度: O(n^2)
+     *
      * @param arr 待排序数组
      */
     void bubbleSort(int[] arr);
 
     /**
      * 插入排序
+     *
+     * 时间复杂度: O(n^2)
      *
      * @param arr 待排序数组
      */
@@ -27,12 +31,16 @@ public interface ISort {
      * 希尔排序
      * 插入排序的改进版本
      *
+     *
+     *
      * @param arr 待排序数组
      */
     void shellSort(int[] arr);
 
     /**
      * 选择排序
+     *
+     * 时间复杂度: O(n^2)
      *
      * @param arr 待排序数组
      */
@@ -43,8 +51,8 @@ public interface ISort {
      *
      * 递推公式: merge_sort(p...r) = merge(merge_sort(p...q), merge_sort(q + 1 ... q))
      * 终止条件: p >= r 不用再继续分解
-
-     * 时间复杂度: O(n * logn)
+     *
+     * 时间复杂度: O(nlogn)
      * 空间复杂度: O(n)
      *
      * @param arr 待排序数组
@@ -57,8 +65,37 @@ public interface ISort {
      * 递推公式: quick_sort(p...r) = quick_sort(p...q) + quick_sort(q + 1 ... r)
      * 终止条件: p >= r
      *
+     * 时间复杂度: O(nlogn)
+     *
      * @param arr 待排序数组
      */
     void quickSort(int[] arr);
+
+    /**
+     * 桶排序
+     *
+     * 时间复杂度: O(n)
+     *
+     * @param arr
+     */
+    void bucketSort(int[] arr);
+
+    /**
+     * 计数排序
+     *
+     * 时间复杂度: O(n)
+     *
+     * @param arr 待排序数组
+     */
+    void countingSort(int[] arr);
+
+    /**
+     * 基数排序
+     *
+     * 时间复杂度: O(n)
+     *
+     * @param arr 待排序数组
+     */
+    void radixSort(int[] arr);
 
 }

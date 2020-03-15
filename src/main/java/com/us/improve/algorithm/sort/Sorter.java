@@ -189,4 +189,21 @@ public class Sorter implements ISort {
         doQuickSort(arr, i, tail);
     }
 
+    @Override
+    public void bucketSort(int[] arr) {
+
+    }
+
+    @Override
+    public void countingSort(int[] arr) {
+
+    }
+
+    @Override
+    public void radixSort(int[] arr) {
+
+    }
+
+
+
 }

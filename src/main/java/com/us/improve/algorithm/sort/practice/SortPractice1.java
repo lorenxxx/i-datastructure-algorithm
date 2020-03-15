@@ -41,4 +41,19 @@ public class SortPractice1 implements ISort {
 
     }
 
+    @Override
+    public void bucketSort(int[] arr) {
+        
+    }
+
+    @Override
+    public void countingSort(int[] arr) {
+
+    }
+
+    @Override
+    public void radixSort(int[] arr) {
+
+    }
+
 }
