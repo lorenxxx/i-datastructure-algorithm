@@ -43,7 +43,7 @@ public class SortPractice1 implements ISort {
 
     @Override
     public void bucketSort(int[] arr) {
-        
+
     }
 
     @Override
