@@ -1,5 +1,7 @@
 package com.us.improve.algorithm.sort;
 
+import com.us.improve.algorithm.sort.practice.SortPractice1;
+
 import java.util.Arrays;
 
 /**
@@ -12,7 +14,7 @@ import java.util.Arrays;
 public class MainTest {
 
     public static void main(String[] args) {
-        ISort sort = new Sorter();
+        ISort sort = new SortPractice1();
 
         int[] arr1 = new int[]{1, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
         sort.bubbleSort(arr1);
