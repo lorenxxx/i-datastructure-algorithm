@@ -1,4 +1,4 @@
-package com.us.improve.algorithm.others;
+package com.us.improve.algorithm.others.array;
 
 import java.util.Arrays;
 
