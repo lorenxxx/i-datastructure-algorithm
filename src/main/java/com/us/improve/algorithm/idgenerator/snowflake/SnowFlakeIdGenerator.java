@@ -166,7 +166,7 @@ public class SnowFlakeIdGenerator {
                 @Override
                 public void run() {
                     long id = idGenerator.nextId();
-                    System.out.println(id);
+                    System.out.println(Long.toBinaryString(id));
                 }
             });
         }

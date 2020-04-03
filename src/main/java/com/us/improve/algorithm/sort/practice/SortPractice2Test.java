@@ -1,20 +1,20 @@
-package com.us.improve.algorithm.sort;
+package com.us.improve.algorithm.sort.practice;
 
-import com.us.improve.algorithm.sort.practice.SortPractice1;
+import com.us.improve.algorithm.sort.ISort;
 
 import java.util.Arrays;
 
 /**
- * @ClassName MainTest
- * @Desciption 测试
+ * @ClassName SortPractice2Test
+ * @Desciption 排序练习2测试
  * @Author loren
- * @Date 2020/3/12 4:08 PM
+ * @Date 2020/4/3 3:51 PM
  * @Version 1.0
  **/
-public class MainTest {
+public class SortPractice2Test {
 
     public static void main(String[] args) {
-        ISort sort = new SortPractice1();
+        ISort sort = new SortPractice2();
 
         int[] arr1 = new int[]{1, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
         sort.bubbleSort(arr1);
@@ -25,7 +25,7 @@ public class MainTest {
         System.out.println(Arrays.toString(arr2));
 
         int[] arr3 = new int[]{1, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
-        sort.shellSort(arr3);
+        sort.insertSort(arr3);
         System.out.println(Arrays.toString(arr3));
 
         int[] arr4 = new int[]{1, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
@@ -37,12 +37,8 @@ public class MainTest {
         System.out.println(Arrays.toString(arr5));
 
         int[] arr6 = new int[]{1, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
-        sort.mergeSort(arr6);
+        sort.quickSort(arr6);
         System.out.println(Arrays.toString(arr6));
-
-        int[] arr7 = new int[]{1, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
-        sort.quickSort(arr7);
-        System.out.println(Arrays.toString(arr7));
     }
 
 }
