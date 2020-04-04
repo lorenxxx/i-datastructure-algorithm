@@ -1,13 +1,13 @@
-package com.us.improve.algorithm.search;
+package com.us.improve.algorithm.search.practice;
 
 /**
- * @ClassName BinarySearch
- * @Desciption 二分查找
+ * @ClassName BinarySearchPractice1
+// * @Desciption 二分查找练习1
  * @Author loren
- * @Date 2020/3/16 4:20 PM
+ * @Date 2020/4/4 4:24 PM
  * @Version 1.0
  **/
-public class BinarySearch {
+public class BinarySearchPractice1 {
 
     /**
      * 简单二分查找：有序数组中不存在重复元素，查找值等于给定值的元素下标
@@ -86,7 +86,7 @@ public class BinarySearch {
         int low = 0;
         int high = arr.length - 1;
         while (low <= high) {
-            int mid = low + ((high - low) >> 1);
+            int mid = low + (high - low) / 2;
             if (arr[mid] < value) {
                 low = mid + 1;
             } else if (arr[mid] > value) {
@@ -118,7 +118,7 @@ public class BinarySearch {
         int low = 0;
         int high = arr.length - 1;
         while (low <= high) {
-            int mid = low + ((high - low) >> 1);
+            int mid = low + (high - low) / 2;
             if (arr[mid] < value) {
                 low = mid + 1;
             } else if (arr[mid] > value) {
@@ -142,7 +142,7 @@ public class BinarySearch {
      * @param value 待查找值
      * @return 元素下标，如果不存在则返回-1
      */
-    public int bSearch5(int arr[], int value) {
+    public int bSearch5(int[] arr, int value) {
         if (arr == null || arr.length <= 0) {
             return -1;
         }
@@ -150,7 +150,7 @@ public class BinarySearch {
         int low = 0;
         int high = arr.length - 1;
         while (low <= high) {
-            int mid = low + ((high - low) >> 1);
+            int mid = low + (high - low) / 2;
             if (arr[mid] >= value) {
                 if (mid == 0 || arr[mid - 1] < value) {
                     return mid;
@@ -172,7 +172,7 @@ public class BinarySearch {
      * @param value 待查找值
      * @return 元素下标，如果不存在则返回-1
      */
-    public int bSearch6(int arr[], int value) {
+    public int bSearch6(int[] arr, int value) {
         if (arr == null || arr.length <= 0) {
             return -1;
         }
@@ -180,7 +180,7 @@ public class BinarySearch {
         int low = 0;
         int high = arr.length - 1;
         while (low <= high) {
-            int mid = low + ((high - low) >> 1);
+            int mid = low + (high - low) / 2;
             if (arr[mid] <= value) {
                 if (mid == arr.length - 1 || arr[mid + 1] > value) {
                     return mid;
@@ -194,6 +194,5 @@ public class BinarySearch {
 
         return -1;
     }
-
 
 }
