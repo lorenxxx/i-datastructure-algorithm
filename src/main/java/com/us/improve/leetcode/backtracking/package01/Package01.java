@@ -1,4 +1,4 @@
-package com.us.improve.leetcode.others.package01;
+package com.us.improve.leetcode.backtracking.package01;
 
 /**
  * @ClassName Package01

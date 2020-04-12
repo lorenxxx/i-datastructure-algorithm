@@ -1,4 +1,4 @@
-package com.us.improve.leetcode.others.queen8;
+package com.us.improve.leetcode.backtracking.queen8;
 
 /**
  * @ClassName EightQueen2
