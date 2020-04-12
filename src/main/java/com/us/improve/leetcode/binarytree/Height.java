@@ -9,18 +9,18 @@ package com.us.improve.leetcode.binarytree;
  **/
 public class Height {
 
-    public static int solve(Node node) {
+    public static int getHeight(Node node) {
         if (node == null) {
             return 0;
         }
-        int leftHeight = solve(node.getLeft());
-        int rightHeight = solve(node.getRight());
+        int leftHeight = getHeight(node.getLeft());
+        int rightHeight = getHeight(node.getRight());
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
     public static void main(String[] args) {
         Node root = new Node(1, new Node(2, null, null), null);
-        System.out.println(solve(root));
+        System.out.println(getHeight(root));
     }
 
 }
