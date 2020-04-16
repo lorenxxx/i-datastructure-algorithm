@@ -11,7 +11,7 @@ import java.util.Arrays;
  **/
 public class IntervalCoverage {
 
-    // TODO: 2020/4/15  
+    // TODO: 2020/4/15
 
     /**
      * 问题描述
