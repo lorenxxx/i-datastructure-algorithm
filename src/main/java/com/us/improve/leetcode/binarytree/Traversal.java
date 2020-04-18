@@ -88,6 +88,8 @@ public class Traversal {
     /**
      * 层序遍历
      *
+     * BFS求解
+     *
      * @param root
      * @return
      */
@@ -117,6 +119,33 @@ public class Traversal {
             }
             res.add(list);
         }
+
+        return res;
+    }
+
+
+    /**
+     * 层序遍历
+     *
+     * DFS求解
+     *
+     * @param root
+     * @return
+     */
+    public List<List<Integer>> levelOrder(Node root, int level, List<List<Integer>> res) {
+        if (root == null) {
+            return res;
+        }
+
+        if (res.size() < level + 1) {
+            res.add(new ArrayList<>());
+        }
+
+        List<Integer> list = res.get(level);
+        list.add(root.getData());
+
+        levelOrder(root.getLeft(), level + 1, res);
+        levelOrder(root.getRight(), level + 1, res);
 
         return res;
     }

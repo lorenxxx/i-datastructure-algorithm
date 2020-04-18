@@ -22,4 +22,8 @@ public class Node {
 
     private Node right;
 
+    public Node(int data) {
+        this(data, null, null);
+    }
+
 }
