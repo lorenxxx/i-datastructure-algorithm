@@ -31,8 +31,6 @@ public interface ISort {
      * 希尔排序
      * 插入排序的改进版本
      *
-     *
-     *
      * @param arr 待排序数组
      */
     void shellSort(int[] arr);
@@ -70,32 +68,5 @@ public interface ISort {
      * @param arr 待排序数组
      */
     void quickSort(int[] arr);
-
-    /**
-     * 桶排序
-     *
-     * 时间复杂度: O(n)
-     *
-     * @param arr
-     */
-    void bucketSort(int[] arr);
-
-    /**
-     * 计数排序
-     *
-     * 时间复杂度: O(n)
-     *
-     * @param arr 待排序数组
-     */
-    void countingSort(int[] arr);
-
-    /**
-     * 基数排序
-     *
-     * 时间复杂度: O(n)
-     *
-     * @param arr 待排序数组
-     */
-    void radixSort(int[] arr);
 
 }

@@ -3,13 +3,13 @@ package com.us.improve.algorithm.sort.practice;
 import com.us.improve.algorithm.sort.ISort;
 
 /**
- * @ClassName SortPractice1
- * @Desciption 排序练习1
+ * @ClassName SortPractice3
+ * @Desciption 排序练习3
  * @Author loren
- * @Date 2020/3/12 3:17 PM
+ * @Date 2020/4/19 3:26 PM
  * @Version 1.0
  **/
-public class SortPractice1 implements ISort {
+public class SortPractice3 implements ISort {
 
     @Override
     public void bubbleSort(int[] arr) {
@@ -17,19 +17,20 @@ public class SortPractice1 implements ISort {
             return;
         }
 
-        for (int i = 0; i < arr.length; i++) {
-            boolean flag = false;
+        for (int i = 0; i < arr.length - 1; i++) {
+            boolean swapFlag = false;
 
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int tmp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = tmp;
-                    flag = true;
+
+                    swapFlag = true;
                 }
             }
 
-            if (!flag) {
+            if (!swapFlag) {
                 break;
             }
         }
@@ -42,18 +43,19 @@ public class SortPractice1 implements ISort {
         }
 
         for (int i = 1; i < arr.length; i++) {
-            int value = arr[i];
+            int insertValue = arr[i];
+
             int j = i - 1;
             for (; j >= 0; j--) {
-                if (arr[j] > value) {
+                if (arr[j] > insertValue) {
                     arr[j + 1] = arr[j];
                 } else {
                     break;
                 }
             }
-            arr[j + 1] = value;
-        }
 
+            arr[j + 1] = insertValue;
+        }
     }
 
     @Override
@@ -64,16 +66,17 @@ public class SortPractice1 implements ISort {
 
         for (int step = arr.length / 2; step >= 1; step /= 2) {
             for (int i = step; i < arr.length; i++) {
-                int tmp = arr[i];
+                int insertValue = arr[i];
                 int j = i - step;
                 for (; j >= 0; j -= step) {
-                    if (arr[j] > tmp) {
+                    if (arr[j] > insertValue) {
                         arr[j + step] = arr[j];
                     } else {
                         break;
                     }
                 }
-                arr[j + step] = tmp;
+
+                arr[j + step] = insertValue;
             }
         }
     }
@@ -84,21 +87,20 @@ public class SortPractice1 implements ISort {
             return;
         }
 
-        for (int i = 0; i < arr.length; i++) {
-            int min = i;
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
             for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[min]) {
-                    min = j;
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
                 }
             }
 
-            if (i != min) {
+            if (minIndex != i) {
                 int tmp = arr[i];
-                arr[i] = arr[min];
-                arr[min] = tmp;
+                arr[i] = arr[minIndex];
+                arr[minIndex] = tmp;
             }
         }
-
     }
 
     @Override
@@ -108,36 +110,35 @@ public class SortPractice1 implements ISort {
         }
 
         int[] result = new int[arr.length];
-        mergeSortRecursive(arr, result, 0, arr.length - 1);
+        doMergeSort(arr, result, 0, arr.length - 1);
     }
 
-    private void mergeSortRecursive(int[] arr, int[] result, int start, int end) {
-        if (start >= end) {
+    private void doMergeSort(int[] arr, int[] result, int left, int right) {
+        if (left >= right) {
             return;
         }
 
-        int mid = start + (end - start) / 2;
+        int mid = left + (right - left) / 2;
+        int left1 = left;
+        int right1 = mid;
+        int left2 = mid + 1;
+        int right2 = right;
 
-        int start1 = start;
-        int end1 = mid;
-        int start2 = mid + 1;
-        int end2 = end;
+        doMergeSort(arr, result, left1, right1);
+        doMergeSort(arr, result, left2, right2);
 
-        mergeSortRecursive(arr, result, start1, end1);
-        mergeSortRecursive(arr, result, start2, end2);
-
-        int k = start;
-        while (start1 <= end1 && start2 <= end2) {
-            result[k++] = arr[start1] < arr[start2] ? arr[start1++] : arr[start2++];
+        int k = left;
+        while (left1 <= right1 && left2 <= right2) {
+            result[k++] = arr[left1] < arr[left2] ? arr[left1++] : arr[left2++];
         }
-        while (start1 <= end1) {
-            result[k++] = arr[start1++];
+        while (left1 <= right1) {
+            result[k++] = arr[left1++];
         }
-        while (start2 <= end2) {
-            result[k++] = arr[start2++];
+        while (left2 <= right2) {
+            result[k++] = arr[left2++];
         }
 
-        for (k = start; k <= end; k++) {
+        for (k = left; k <= right; k++) {
             arr[k] = result[k];
         }
     }
@@ -151,36 +152,37 @@ public class SortPractice1 implements ISort {
         doQuickSort(arr, 0, arr.length - 1);
     }
 
-    private void doQuickSort(int[] arr, int head, int tail) {
-        if (head >= tail) {
+    private void doQuickSort(int[] arr, int low, int high) {
+        if (low > high) {
             return;
         }
 
-        int i = head;
-        int j = tail;
-        int pivot = arr[head + (tail - head) / 2];
+        int i = low;
+        int j = high;
+        int pivot = arr[low];
 
-        while (i <= j) {
-            while (arr[i] < pivot) {
+        while (i < j) {
+            while (i <= j && arr[i] <= pivot) {
                 i++;
             }
-            while (arr[j] > pivot) {
+            while (i <= j && arr[j] >= pivot) {
                 j--;
             }
             if (i < j) {
-                int tmp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tmp;
+                int t = arr[j];
+                arr[j] = arr[i];
+                arr[i] = t;
 
                 i++;
                 j--;
-            } else if (i == j) {
-                i++;
             }
         }
 
-        doQuickSort(arr, head, j);
-        doQuickSort(arr, i, tail);
+        arr[low] = arr[j];
+        arr[j] = pivot;
+
+        doQuickSort(arr, low, j - 1);
+        doQuickSort(arr, j + 1, high);
     }
 
 }

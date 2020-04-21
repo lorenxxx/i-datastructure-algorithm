@@ -115,37 +115,37 @@ public class Sorter implements ISort {
         mergeSortRecursive(arr, result, 0, arr.length - 1);
     }
 
-    private void mergeSortRecursive(int[] arr, int[] result, int start, int end) {
-        if (start >= end) {
+    private void mergeSortRecursive(int[] arr, int[] result, int low, int high) {
+        if (low > high) {
             return;
         }
 
-        int len = end - start;
-        int mid = start + len / 2;
+        int i = low;
+        int j = high;
+        int pivot = arr[low];
 
-        int start1 = start;
-        int end1 = mid;
-        int start2 = mid + 1;
-        int end2 = end;
+        while (i < j) {
+            while (i <= j && arr[i] <= pivot) {
+                i++;
+            }
+            while (i <= j && arr[j] >= pivot) {
+                j--;
+            }
+            if (i < j) {
+                int t = arr[j];
+                arr[j] = arr[i];
+                arr[i] = t;
 
-        mergeSortRecursive(arr, result, start1, end1);
-        mergeSortRecursive(arr, result, start2, end2);
-
-        int k = start;
-        while (start1 <= end1 && start2 <= end2) {
-            result[k++] = arr[start1] < arr[start2] ? arr[start1++] : arr[start2++];
-        }
-        while (start1 <= end1) {
-            result[k++] = arr[start1++];
-        }
-        while (start2 <= end2) {
-            result[k++] = arr[start2++];
-        }
-
-        for (k = start; k <= end; k++) {
-            arr[k] = result[k];
+                i++;
+                j--;
+            }
         }
 
+        arr[low] = arr[j];
+        arr[j] = pivot;
+
+        doQuickSort(arr, low, j - 1);
+        doQuickSort(arr, j + 1, high);
     }
 
     @Override
@@ -157,36 +157,35 @@ public class Sorter implements ISort {
         doQuickSort(arr, 0, arr.length - 1);
     }
 
-    private void doQuickSort(int[] arr, int head, int tail) {
-        if (head >= tail) {
+    private void doQuickSort(int[] arr, int low, int high) {
+        if (low > high) {
             return;
         }
 
-        int i = head;
-        int j = tail;
-        int pivot = arr[(head + tail) / 2];
+        int i = low;
+        int j = high;
+        int pivot = arr[low];
 
-        while (i <= j) {
-            while (arr[i] < pivot) {
+        while (i < j) {
+            while (arr[i] <= pivot && i < j) {
                 i++;
             }
-            while (arr[j] > pivot) {
+            while (arr[j] >= pivot && i < j) {
                 j--;
             }
             if (i < j) {
                 int tmp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = tmp;
-
-                i++;
-                j--;
-            } else if (i == j) {
-                i++;
             }
         }
 
-        doQuickSort(arr, head, j);
-        doQuickSort(arr, i, tail);
+        int tmp = arr[low];
+        arr[low] = arr[i];
+        arr[i] = tmp;
+
+        doQuickSort(arr, low, i - 1);
+        doQuickSort(arr, i + 1, high);
     }
 
     @Override
@@ -203,7 +202,6 @@ public class Sorter implements ISort {
     public void radixSort(int[] arr) {
 
     }
-
 
 
 }
