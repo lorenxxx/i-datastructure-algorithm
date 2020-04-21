@@ -7,7 +7,7 @@ package com.us.improve.algorithm.search;
  * @Date 2020/3/17 3:27 PM
  * @Version 1.0
  **/
-public class MainTest {
+public class BinarySearchTest {
 
     public static void main(String[] args) {
         BinarySearch search = new BinarySearch();
