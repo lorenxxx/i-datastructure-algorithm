@@ -28,7 +28,7 @@ public interface ISort {
     void insertSort(int[] arr);
 
     /**
-     * 希尔排序
+     * 希尔排序(增量递减插入排序)
      * 插入排序的改进版本
      *
      * @param arr 待排序数组
@@ -64,6 +64,7 @@ public interface ISort {
      * 终止条件: p >= r
      *
      * 时间复杂度: O(nlogn)
+     * 空间复杂度: O(1) 原地排序
      *
      * @param arr 待排序数组
      */

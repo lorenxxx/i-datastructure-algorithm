@@ -172,9 +172,6 @@ public class SortPractice3 implements ISort {
                 int t = arr[j];
                 arr[j] = arr[i];
                 arr[i] = t;
-
-                i++;
-                j--;
             }
         }
 

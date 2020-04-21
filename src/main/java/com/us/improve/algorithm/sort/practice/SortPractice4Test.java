@@ -5,16 +5,16 @@ import com.us.improve.algorithm.sort.ISort;
 import java.util.Arrays;
 
 /**
- * @ClassName SortPractice3Test
- * @Desciption 排序练习3
+ * @ClassName SortPractice4Test
+ * @Desciption 排序练习4测试
  * @Author loren
- * @Date 2020/4/19 3:37 PM
+ * @Date 2020/4/21 2:59 PM
  * @Version 1.0
  **/
-public class SortPractice3Test {
+public class SortPractice4Test {
 
     public static void main(String[] args) {
-        ISort sort = new SortPractice3();
+        ISort sort = new SortPractice4();
 
         int[] arr1 = {10, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
         sort.bubbleSort(arr1);
@@ -39,6 +39,7 @@ public class SortPractice3Test {
         int[] arr6 = {10, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
         sort.quickSort(arr6);
         System.out.println(Arrays.toString(arr6));
+
     }
 
 }
