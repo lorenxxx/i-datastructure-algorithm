@@ -7,16 +7,27 @@ import java.util.Set;
 
 /**
  * @ClassName IntersectionOfTwoArrays
- * @Desciption 两个数组的交集：给定两个数组，编写一个函数来计算它们的交集。
+ * @Desciption 两个数组的交集
  * @Author loren
  * @Date 2020/4/9 5:28 PM
  * @Version 1.0
  **/
 public class IntersectionOfTwoArrays {
 
-    public static List<Integer> solve(int[] nums1, int[] nums2) {
-        Set<Integer> res = new HashSet<>();
+    /**
+     * 问题描述
+     *
+     * 两个数组的交集
+     * 给定两个数组，编写一个函数来计算它们的交集
+     */
 
+    /**
+     * 解题思路
+     *
+     */
+
+
+    public static List<Integer> solve(int[] nums1, int[] nums2) {
         if (nums1 == null || nums1.length == 0) {
             return new ArrayList<>();
         }
@@ -25,14 +36,16 @@ public class IntersectionOfTwoArrays {
             return new ArrayList<>();
         }
 
+        Set<Integer> res = new HashSet<>();
+
         Set<Integer> set = new HashSet<>(nums1.length);
-        for (int num : nums1) {
-            set.add(num);
+        for (int item : nums1) {
+            set.add(item);
         }
 
-        for (int num : nums2) {
-            if (set.contains(num)) {
-                res.add(num);
+        for (int item : nums2) {
+            if (set.contains(item)) {
+                res.add(item);
             }
         }
 

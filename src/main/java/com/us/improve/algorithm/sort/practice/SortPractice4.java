@@ -2,6 +2,9 @@ package com.us.improve.algorithm.sort.practice;
 
 import com.us.improve.algorithm.sort.ISort;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @ClassName SortPractice4
  * @Desciption 排序练习4
@@ -102,6 +105,9 @@ public class SortPractice4 implements ISort {
                 arr[i] = tmp;
             }
         }
+
+        List list = new ArrayList();
+
     }
 
     @Override

@@ -9,18 +9,34 @@ package com.us.improve.leetcode.singlylinkedlist;
  **/
 public class Merge {
 
+    /**
+     * 问题描述
+     *
+     * 合并两个有序单链表
+     */
+
+    /**
+     * 解题思路
+     *
+     */
+
+    /**
+     * 非递归实现
+     *
+     * @param head1
+     * @param head2
+     * @return
+     */
     public static Node merge(Node head1, Node head2) {
-        Node head;
         if (head1 == null) {
-            head = head2;
-            return head;
+            return head2;
         }
 
         if (head2 == null) {
-            head = head1;
-            return head;
+            return head1;
         }
 
+        // 哨兵
         Node sentinel = new Node();
         Node p = sentinel;
         Node p1 = head1;
@@ -51,6 +67,13 @@ public class Merge {
         return sentinel.getNext();
     }
 
+    /**
+     * 递归实现
+     *
+     * @param head1
+     * @param head2
+     * @return
+     */
     public static Node merge2(Node head1, Node head2) {
         if (head1 == null) {
             return head2;
@@ -60,7 +83,7 @@ public class Merge {
             return head1;
         }
 
-        Node head = null;
+        Node head;
         if (head1.getData() < head2.getData()) {
             head = head1;
             head.setNext(merge2(head1.getNext(), head2));

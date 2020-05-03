@@ -2,12 +2,18 @@ package com.us.improve.leetcode.singlylinkedlist;
 
 /**
  * @ClassName SearchNodeK
- * @Desciption 输入一个单链表，输出此链表中的倒数第 K 个节点。
+ * @Desciption 输入一个单链表，输出此链表中的倒数第 K 个节点
  * @Author loren
  * @Date 2020/4/10 2:38 PM
  * @Version 1.0
  **/
 public class SearchNodeK {
+
+    /**
+     * 问题描述
+     *
+     * 输入一个单链表，输出链表中的倒数第 K 个节点
+     */
 
     /**
      * 二次遍历法
@@ -16,7 +22,7 @@ public class SearchNodeK {
      * @param k
      * @return
      */
-    public static Node solve(Node head, int k) {
+    public static Node searchNodeK1(Node head, int k) {
         int count = 0;
 
         Node p = head;
@@ -44,7 +50,7 @@ public class SearchNodeK {
      * @param k
      * @return
      */
-    public static Node solve2(Node head, int k) {
+    public static Node searchNodeK2(Node head, int k) {
         Node fast = head;
         Node slow = head;
 
@@ -73,10 +79,10 @@ public class SearchNodeK {
         head.getNext().setNext(new Node(3, null));
 
         Traversal.display(head);
-        Node node = solve(head, 3);
+        Node node = searchNodeK1(head, 3);
         System.out.println(node);
 
-        node = solve2(head, 3);
+        node = searchNodeK2(head, 3);
         System.out.println(node);
     }
 

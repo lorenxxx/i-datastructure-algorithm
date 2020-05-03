@@ -16,7 +16,7 @@ public class Traversal {
 
     /**
      * 前序遍历
-     *
+     * <p>
      * 根->左->右
      *
      * @param node
@@ -39,7 +39,7 @@ public class Traversal {
 
     /**
      * 中序遍历
-     *
+     * <p>
      * 左->根->右
      *
      * @param node
@@ -63,7 +63,7 @@ public class Traversal {
 
     /**
      * 后序遍历
-     *
+     * <p>
      * 左->右->根
      *
      * @param node
@@ -87,7 +87,7 @@ public class Traversal {
 
     /**
      * 层序遍历
-     *
+     * <p>
      * BFS求解
      *
      * @param root
@@ -126,7 +126,7 @@ public class Traversal {
 
     /**
      * 层序遍历
-     *
+     * <p>
      * DFS求解
      *
      * @param root

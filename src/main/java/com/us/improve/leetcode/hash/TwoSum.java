@@ -6,14 +6,28 @@ import java.util.Map;
 
 /**
  * @ClassName TwoSum
- * @Desciption 两数之和：给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。
+ * @Desciption 两数之和
  * @Author loren
  * @Date 2020/4/8 2:55 PM
  * @Version 1.0
  **/
 public class TwoSum {
 
-    public static int[] solve(int[] nums, int target) {
+    /**
+     * 问题描述
+     *
+     * 两数之和
+     * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标
+     *
+     */
+
+    /**
+     * 解题思路
+     *
+     *
+     */
+
+    public static int[] findTwoSum(int[] nums, int target) {
         if (nums == null || nums.length <= 1) {
             return null;
         }
@@ -35,7 +49,7 @@ public class TwoSum {
         int[] nums = new int[] {2, 7, 11, 15};
         int target = 18;
 
-        int[] result = solve(nums, target);
+        int[] result = findTwoSum(nums, target);
         System.out.println(Arrays.toString(result));
     }
 

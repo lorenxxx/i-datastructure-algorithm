@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * @ClassName Traversal
- * @Desciption TODO
+ * @Desciption 遍历链表
  * @Author loren
  * @Date 2020/4/10 2:39 PM
  * @Version 1.0
@@ -20,6 +20,11 @@ public class Traversal {
         System.out.println();
     }
 
+    /**
+     * 非递归实现
+     *
+     * @param head
+     */
     public static void reverseDisplay(Node head) {
         if (head == null) {
             return;
@@ -38,6 +43,11 @@ public class Traversal {
         System.out.println();
     }
 
+    /**
+     * 递归实现
+     *
+     * @param head
+     */
     public static void reverseDisplay2(Node head) {
         if (head == null) {
             return;

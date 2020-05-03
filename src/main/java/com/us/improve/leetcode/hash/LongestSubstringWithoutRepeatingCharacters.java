@@ -7,15 +7,28 @@ import java.util.Set;
 
 /**
  * @ClassName LongestSubstringWithoutRepeatingCharacters
- * @Desciption 给定一个字符串，请你找出其中不含有重复字符的#最长子串#的长度。
+ * @Desciption 最长无重复字符子串
  * @Author loren
  * @Date 2020/4/8 3:41 PM
  * @Version 1.0
  **/
 public class LongestSubstringWithoutRepeatingCharacters {
 
-    public static int solve(String str) {
-        if (str == null) {
+    /**
+     * 问题描述
+     *
+     * 最长无重复字符子串
+     * 给定一个字符串，请你找出其中不含有重复字符的#最长子串#的长度
+     */
+
+    /**
+     * 解题思路
+     *
+     */
+
+
+    public static int findLongestSubstring1(String str) {
+        if (str == null || str.length() == 0) {
             return -1;
         }
 
@@ -31,15 +44,16 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 right++;
                 res = right - left > res ? right - left : res;
             } else {
-                windowSet.remove(str.charAt(left++));
+                windowSet.remove(str.charAt(left));
+                left++;
             }
         }
 
         return res;
     }
 
-    public static int solve2(String str) {
-        if (str == null) {
+    public static int findLongestSubstring2(String str) {
+        if (str == null || str.length() == 0) {
             return -1;
         }
 
@@ -63,8 +77,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
     public static void main(String[] args) {
         String str = "hello";
-        System.out.println(solve(str));
-        System.out.println(solve2(str));
+        System.out.println(findLongestSubstring1(str));
+        System.out.println(findLongestSubstring2(str));
     }
 
 }

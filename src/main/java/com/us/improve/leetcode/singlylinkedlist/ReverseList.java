@@ -2,16 +2,34 @@ package com.us.improve.leetcode.singlylinkedlist;
 
 /**
  * @ClassName ReverseList
- * @Desciption 反转一个单链表
+ * @Desciption 反转单链表
  * @Author loren
  * @Date 2020/4/11 3:00 PM
  * @Version 1.0
  **/
 public class ReverseList {
 
-    public static Node reverseList(Node head) {
-        if (head == null) {
-            return null;
+    /**
+     * 问题描述
+     *
+     * 反转一个单链表
+     */
+
+    /**
+     * 解题思路
+     *
+     *
+     */
+
+    /**
+     * 非递归实现
+     *
+     * @param head
+     * @return
+     */
+    public static Node reverseList1(Node head) {
+        if (head == null || head.getNext() == null) {
+            return head;
         }
 
         Node pre = null;
@@ -27,6 +45,12 @@ public class ReverseList {
         return pre;
     }
 
+    /**
+     * 递归实现
+     *
+     * @param head
+     * @return
+     */
     public static Node reverseList2(Node head) {
         if (head == null || head.getNext() == null) {
             return head;

@@ -27,7 +27,7 @@ public class Maze {
      * 1表示墙壁，0表示可以走的路
      */
     private int[][] maze = new int[][] {
-            {0, 0, 1, 0, 0},
+            {0, 0, 0, 0, 0},
             {0, 1, 0, 1, 0},
             {0, 0, 0, 0, 0},
             {0, 1, 1, 1, 0},
@@ -57,7 +57,7 @@ public class Maze {
 
         visit[0][0] = 1;
 
-        while (head < tail) {
+        while (true) {
             // 是否找到终点
             boolean flag = false;
             for (int i = 0; i < 4; i++) {

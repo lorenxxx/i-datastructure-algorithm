@@ -6,19 +6,34 @@ import java.util.List;
 
 /**
  * @ClassName ThreeSum
- * @Desciption 三数之和：给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。
+ * @Desciption 三数之和
  * @Author loren
  * @Date 2020/4/8 3:53 PM
  * @Version 1.0
  **/
 public class ThreeSum {
 
-    public static List<List<Integer>> solve(int[] nums) {
+    /**
+     * 问题描述
+     *
+     * 三数之和
+     * 给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组
+     *
+     */
+
+    /**
+     * 解题思路
+     *
+     *
+     */
+
+    public static List<List<Integer>> findThreeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        if (nums == null || nums.length < 3) {
+        if (nums == null || nums.length <= 2) {
             return res;
         }
 
+        // 先对数组做排序
         Arrays.sort(nums);
 
         for (int i = 0; i < nums.length - 2; i++) {
@@ -26,6 +41,7 @@ public class ThreeSum {
             if (nums[i] > 0) {
                 break;
             }
+
             // 当相邻数相等时，跳过该数，避免重复结果
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
@@ -60,7 +76,7 @@ public class ThreeSum {
 
     public static void main(String[] args) {
         int[] nums = new int[] {-2, -1, -1, 0, 1, 2, 4};
-        System.out.println(solve(nums));
+        System.out.println(findThreeSum(nums));
     }
 
 }
