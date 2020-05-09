@@ -2,17 +2,14 @@ package com.us.improve.algorithm.sort.practice;
 
 import com.us.improve.algorithm.sort.ISort;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * @ClassName SortPractice4
- * @Desciption 排序练习4
+ * @ClassName SortPractice5
+ * @Desciption 排序练习
  * @Author loren
- * @Date 2020/4/21 2:58 PM
+ * @Date 2020/5/7 10:07 AM
  * @Version 1.0
  **/
-public class SortPractice4 implements ISort {
+public class SortPractice5 implements ISort {
 
     @Override
     public void bubbleSort(int[] arr) {
@@ -21,10 +18,7 @@ public class SortPractice4 implements ISort {
         }
 
         for (int i = 0; i < arr.length - 1; i++) {
-            // 提前退出冒泡排序标志位
-            // 如果某轮冒泡过程没有产生任何交换，则证明数组已经排好序了，可以提前退出
             boolean swapFlag = false;
-
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int tmp = arr[j];
@@ -42,7 +36,7 @@ public class SortPractice4 implements ISort {
 
     @Override
     public void insertSort(int[] arr) {
-        if (arr == null || arr.length <= 1) {
+        if (arr == null || arr.length < 2) {
             return;
         }
 
@@ -59,12 +53,11 @@ public class SortPractice4 implements ISort {
 
             arr[j + 1] = insertValue;
         }
-
     }
 
     @Override
     public void shellSort(int[] arr) {
-        if (arr == null || arr.length <= 1) {
+        if (arr == null || arr.length < 2) {
             return;
         }
 
@@ -83,11 +76,12 @@ public class SortPractice4 implements ISort {
                 arr[j + step] = insertValue;
             }
         }
+
     }
 
     @Override
     public void selectSort(int[] arr) {
-        if (arr == null || arr.length <= 1) {
+        if (arr == null || arr.length < 2) {
             return;
         }
 
@@ -105,8 +99,6 @@ public class SortPractice4 implements ISort {
                 arr[i] = tmp;
             }
         }
-
-        List list = new ArrayList();
 
     }
 
@@ -176,7 +168,6 @@ public class SortPractice4 implements ISort {
             while (i <= j && arr[j] >= pivot) {
                 j--;
             }
-
             if (i < j) {
                 int tmp = arr[i];
                 arr[i] = arr[j];
