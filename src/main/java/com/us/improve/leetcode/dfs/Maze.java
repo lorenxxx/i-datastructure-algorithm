@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 /**
@@ -58,7 +59,7 @@ public class Maze {
 
     private void dfs(int x, int y) {
         if (x == 4 && y == 4) {
-            System.out.println(path);
+            System.out.println(Arrays.toString(path.toArray(new Node[path.size()])));
             return;
         }
 
