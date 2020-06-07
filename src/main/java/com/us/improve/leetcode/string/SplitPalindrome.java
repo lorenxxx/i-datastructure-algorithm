@@ -68,6 +68,8 @@ public class SplitPalindrome {
         SplitPalindrome splitPalindrome = new SplitPalindrome();
         List<List<String>> res = splitPalindrome.split(str);
         System.out.println(res);
+
+        System.out.println(str.substring(0, 1));
     }
 
 }
