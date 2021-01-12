@@ -33,22 +33,19 @@ public class AddTwoNumbers
 			return n1;
 		}
 
-		Node<Integer> h1 = n1;
-		Node<Integer> h2 = n2;
-
 		Node<Integer> head = null;
 		Node<Integer> tail = null;
 		Integer carry = 0;
+
+		Node<Integer> h1 = n1;
+		Node<Integer> h2 = n2;
 		while (h1 != null || h2 != null)
 		{
 			Integer num1 = h1 != null ? h1.getData() : 0;
 			Integer num2 = h2 != null ? h2.getData() : 0;
 
 			Integer sum = num1 + num2 + carry;
-			if (sum >= 10)
-			{
-				carry = 1;
-			}
+			carry = sum >= 10 ? 1 : 0;
 
 			if (head == null)
 			{
