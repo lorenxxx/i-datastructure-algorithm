@@ -20,6 +20,14 @@ public class SortPractice6Test
 		int[] arr1 = {10, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
 		sort.bubbleSort(arr1);
 		System.out.println(Arrays.toString(arr1));
+
+		int[] arr2 = {10, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
+		sort.insertSort(arr2);
+		System.out.println(Arrays.toString(arr2));
+
+		int[] arr3 = {10, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
+		sort.shellSort(arr3);
+		System.out.println(Arrays.toString(arr3));
 	}
 
 }

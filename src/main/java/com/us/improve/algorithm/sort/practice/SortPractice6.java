@@ -14,7 +14,7 @@ public class SortPractice6 implements ISort
 	@Override
 	public void bubbleSort(int[] arr)
 	{
-		if (arr == null || arr.length == 0)
+		if (arr == null || arr.length <= 1)
 		{
 			return;
 		}
@@ -44,13 +44,50 @@ public class SortPractice6 implements ISort
 	@Override
 	public void insertSort(int[] arr)
 	{
+		if (arr == null || arr.length <= 1)
+		{
+			return;
+		}
 
+		for (int i = 1; i < arr.length; i++)
+		{
+			int insertValue = arr[i];
+			int j = i - 1;
+
+
+			while (j >= 0 && arr[j] > insertValue)
+			{
+				arr[j + 1] = arr[j];
+				j--;
+			}
+
+			arr[j + 1] = insertValue;
+		}
 	}
 
 	@Override
 	public void shellSort(int[] arr)
 	{
+		if (arr == null || arr.length <= 1)
+		{
+			return;
+		}
 
+		for (int step = arr.length / 2; step >= 1 ; step /= 2)
+		{
+			for (int i = step; i < arr.length; i++)
+			{
+				int insertValue = arr[i];
+				int j = i - step;
+				while (j >= 0 && arr[j] > insertValue)
+				{
+					arr[j + step] = arr[j];
+					j -= step;
+				}
+
+				arr[j + step] = insertValue;
+			}
+		}
 	}
 
 	@Override
@@ -70,4 +107,5 @@ public class SortPractice6 implements ISort
 	{
 
 	}
+
 }
