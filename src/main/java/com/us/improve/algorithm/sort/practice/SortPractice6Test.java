@@ -28,6 +28,10 @@ public class SortPractice6Test
 		int[] arr3 = {10, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
 		sort.shellSort(arr3);
 		System.out.println(Arrays.toString(arr3));
+
+		int[] arr4 = {10, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
+		sort.selectSort(arr4);
+		System.out.println(Arrays.toString(arr4));
 	}
 
 }
