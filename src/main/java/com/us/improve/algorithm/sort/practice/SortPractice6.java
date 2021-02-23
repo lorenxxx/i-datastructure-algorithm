@@ -54,7 +54,6 @@ public class SortPractice6 implements ISort
 			int insertValue = arr[i];
 			int j = i - 1;
 
-
 			while (j >= 0 && arr[j] > insertValue)
 			{
 				arr[j + 1] = arr[j];
