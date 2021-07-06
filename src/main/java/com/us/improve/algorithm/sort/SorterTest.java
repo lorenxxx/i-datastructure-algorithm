@@ -1,7 +1,5 @@
 package com.us.improve.algorithm.sort;
 
-import com.us.improve.algorithm.sort.practice.SortPractice1;
-
 import java.util.Arrays;
 
 /**
@@ -37,12 +35,8 @@ public class SorterTest {
         System.out.println(Arrays.toString(arr5));
 
         int[] arr6 = new int[]{1, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
-        sort.mergeSort(arr6);
+        sort.quickSort(arr6);
         System.out.println(Arrays.toString(arr6));
-
-        int[] arr7 = new int[]{1, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
-        sort.quickSort(arr7);
-        System.out.println(Arrays.toString(arr7));
     }
 
 }
