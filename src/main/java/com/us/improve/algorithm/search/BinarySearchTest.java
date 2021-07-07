@@ -1,5 +1,7 @@
 package com.us.improve.algorithm.search;
 
+import com.us.improve.algorithm.search.practice.BinarySearchPractice1;
+
 /**
  * @ClassName MainTest
  * @Desciption TODO
@@ -10,29 +12,17 @@ package com.us.improve.algorithm.search;
 public class BinarySearchTest {
 
     public static void main(String[] args) {
-        BinarySearch search = new BinarySearch();
+        BinarySearchPractice1 binarySearch = new BinarySearchPractice1();
 
-        int[] arr1 = new int[] {0, 1, 2, 3, 4, 6, 8, 9, 10, 11, 23, 34, 54, 55, 77, 90};
-        int[] arr2 = new int[] {0, 1, 2, 2, 3, 4, 4, 4, 4, 6, 8, 8, 9, 9, 10, 11, 23, 34, 54, 55, 77, 90};
+        int[] arr1 = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] arr2 = new int[] {1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 9, 10};
 
-        int result1 = search.bSearch1(arr1, 77);
-        System.out.println(result1);
-
-        int result2 = search.bSearch2(arr1, 6);
-        System.out.println(result2);
-
-        int result3 = search.bSearch3(arr2, 4);
-        System.out.println(result3);
-
-        int result4 = search.bSearch4(arr2, 2);
-        System.out.println(result4);
-
-        int result5 = search.bSearch5(arr2, 5);
-        System.out.println(result5);
-
-        int result6 = search.bSearch6(arr2, 5);
-        System.out.println(result6);
-
+        System.out.println("Index: " + binarySearch.bSearch1(arr1, 3));
+        System.out.println("Index: " + binarySearch.bSearch2(arr1, 3));
+        System.out.println("Index: " + binarySearch.bSearch3(arr2, 2));
+        System.out.println("Index: " + binarySearch.bSearch4(arr2, 2));
+        System.out.println("Index: " + binarySearch.bSearch5(arr2, 2));
+        System.out.println("Index: " + binarySearch.bSearch6(arr2, 2));
     }
 
 }
