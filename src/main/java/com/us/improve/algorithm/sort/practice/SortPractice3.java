@@ -156,7 +156,7 @@ public class SortPractice3 implements ISort {
 		int j = right;
 		int pivot = arr[left + (right - left) / 2];
 
-		while (left < right) {
+		while (i <= j) {
 			while (arr[i] < pivot) {
 				i++;
 			}
