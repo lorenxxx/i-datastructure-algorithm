@@ -52,6 +52,7 @@ public class LRU {
             } else { // 如果新节点在缓存中
                 // 如果新节点是尾节点
                 if (tail.getData() == node.getData()) {
+
                     return;
                 } else {
                     exist.setData(exist.getNext().getData());
@@ -97,7 +98,7 @@ public class LRU {
         cache.addCache(new Node(4));
         Traversal.display(cache.head());
 
-        cache.addCache(new Node(4));
+        cache.addCache(new Node(3));
         Traversal.display(cache.head());
 
         cache.addCache(new Node(2));

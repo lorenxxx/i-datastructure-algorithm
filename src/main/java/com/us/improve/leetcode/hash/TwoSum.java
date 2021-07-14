@@ -45,11 +45,39 @@ public class TwoSum {
         return null;
     }
 
+    /**
+     * 练习
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
+    public static int[] findTwoSum2(int[] nums, int target) {
+        if (nums == null || nums.length <= 1) {
+            return null;
+        }
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int expect = target - nums[i];
+            if (map.containsKey(expect)) {
+                return new int[] {map.get(expect), i};
+            } else {
+                map.put(nums[i], i);
+            }
+        }
+
+        return null;
+    }
+
     public static void main(String[] args) {
         int[] nums = new int[] {2, 7, 11, 15};
         int target = 18;
 
         int[] result = findTwoSum(nums, target);
+        System.out.println(Arrays.toString(result));
+
+        int[] result1 = findTwoSum2(nums, target);
         System.out.println(Arrays.toString(result));
     }
 

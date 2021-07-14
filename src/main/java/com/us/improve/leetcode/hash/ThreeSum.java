@@ -74,9 +74,63 @@ public class ThreeSum {
         return res;
     }
 
+    /**
+     * 练习
+     *
+     * @param nums
+     * @return
+     */
+    public static List<List<Integer>> findThreeSum2(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums == null || nums.length <= 2) {
+            return res;
+        }
+
+        // 先对数组做排序
+        Arrays.sort(nums);
+
+        for (int i = 0; i < nums.length - 2; i++) {
+            // 当第i个数开始大于零时，跳出循环
+            if (nums[i] > 0) {
+                break;
+            }
+
+            // 当相邻的数相等时，跳过该树，避免重复结果
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+
+            // 使用两个指针，向中间移动
+            int left = i + 1;
+            int right = nums.length - 1;
+            int expectSum = -nums[i];
+            while (left < right) {
+                int twoSum = nums[left] + nums[right];
+                if (twoSum == expectSum) {
+                    res.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    while (left < right && nums[left] == nums[left + 1]) {
+                        left++;
+                    }
+                    while (left < right && nums[right] == nums[right - 1]) {
+                        right--;
+                    }
+                    left++;
+                    right--;
+                } else if (twoSum < expectSum) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+
+        return res;
+    }
+
     public static void main(String[] args) {
         int[] nums = new int[] {-2, -1, -1, 0, 1, 2, 4};
         System.out.println(findThreeSum(nums));
+        System.out.println(findThreeSum2(nums));
     }
 
 }

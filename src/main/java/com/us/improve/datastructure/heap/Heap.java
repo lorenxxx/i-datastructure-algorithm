@@ -71,8 +71,6 @@ public class Heap {
         count--;
 
         heapifyUp2Down(this.elementData, 0, this.count);
-
-
     }
 
     /**
@@ -139,7 +137,7 @@ public class Heap {
     }
 
     /**
-     * 获取父节点的数组下标
+     * 获取父节点在数组中的下标
      *
      * @param i 节点下标
      * @return 父节点在数组中的下标
@@ -149,7 +147,7 @@ public class Heap {
     }
 
     /**
-     * 获取左子节点的数组下标
+     * 获取左子节点在数组中的下标
      *
      * @param i 节点下标
      * @return 左子节点的数组下标
@@ -159,7 +157,7 @@ public class Heap {
     }
 
     /**
-     * 获取右子节点的数组下标
+     * 获取右子节点在数组中的下标
      *
      * @param i 节点下标
      * @return 左子节点的数组下标

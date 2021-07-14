@@ -1,36 +1,42 @@
 package com.us.improve.leetcode.linkedlist;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 /**
  * @Author loren
- * @Description 链表节点
- * @Date 2020-12-31 11:26
+ * @Description TODO
+ * @Date 2021-07-08 22:36
  * @Version 1.0
  **/
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
-public class Node<T>
-{
+public class Node {
 
-	private T data;
+	public int data;
 
-	private Node<T> next;
+	public Node pre;
 
-	public void display()
-	{
+	public Node next;
+
+	public Node(int data, Node pre, Node next) {
+		this.data = data;
+		this.pre = pre;
+		this.next = next;
+	}
+
+	public Node(int data) {
+		this(data, null, null);
+	}
+
+	public Node() {
+
+	}
+
+	public void displayList() {
 		StringBuilder sb = new StringBuilder();
 
-		Node<T> cur = this;
-		while (cur != null)
-		{
-			sb.append(cur.getData());
+		Node cur = this;
+		while (cur != null) {
+			sb.append(cur.data);
 			sb.append("->");
 
-			cur = cur.getNext();
+			cur = cur.next;
 		}
 
 		sb.delete(sb.length() - 2, sb.length());
