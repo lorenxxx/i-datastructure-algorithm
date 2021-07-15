@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @Date 2021-07-14 21:45
  * @Version 1.0
  **/
-public class SortPractise3Test {
+public class SortPractice3Test {
 
 	public static void main(String[] args) {
 		ISort sort = new SortPractice3();
