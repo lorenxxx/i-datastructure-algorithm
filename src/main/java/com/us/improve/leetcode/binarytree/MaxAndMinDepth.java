@@ -36,10 +36,7 @@ public class MaxAndMinDepth {
             return 0;
         }
 
-        int leftDepth = getMaxDepth(node.getLeft());
-        int rightDepth = getMaxDepth(node.getRight());
-
-        return Math.max(leftDepth, rightDepth) + 1;
+        return Math.max(getMaxDepth(node.getLeft()), getMaxDepth(node.getRight())) + 1;
     }
 
     /**

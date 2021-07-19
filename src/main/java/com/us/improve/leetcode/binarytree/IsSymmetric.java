@@ -9,24 +9,38 @@ package com.us.improve.leetcode.binarytree;
  **/
 public class IsSymmetric {
 
-    public boolean solve(Node root) {
-        if (root == null) {
-            return true;
-        }
+	/**
+	 * 问题描述
+	 *
+	 * 给定一个二叉树，检查它是否是镜像对称的。
+	 */
 
-        return isSym(root.getLeft(), root.getRight());
-    }
+	/**
+	 * 解题思路
+	 * <p>
+	 * 如果一棵树的左子树和右子树镜像对称的话，那么这棵树一定是镜像对称的
+	 */
 
-    public boolean isSym(Node n1, Node n2) {
-        if (n1 == null && n2 == null) {
-            return true;
-        }
+	public boolean isSym(Node node) {
+		if (node == null) {
+			return true;
+		}
 
-        if (n1 == null || n2 == null) {
-            return false;
-        }
+		return isSym(node.getLeft(), node.getRight());
+	}
 
-        return n1.getData() == n2.getData() && isSym(n1.getLeft(), n2.getRight()) && isSym(n1.getRight(), n2.getLeft());
-    }
+	private boolean isSym(Node node1, Node node2) {
+		if (node1 == null && node2 == null) {
+			return true;
+		}
+
+		if (node1 == null || node2 == null) {
+			return false;
+		}
+
+		return node1.getData() == node2.getData()
+				&& isSym(node1.getLeft(), node2.getRight())
+				&& isSym(node1.getRight(), node2.getLeft());
+	}
 
 }

@@ -1,97 +1,63 @@
 package com.us.improve.leetcode.array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
- * @ClassName TwoDimenArrayIterator
- * @Desciption 二维数组遍历
  * @Author loren
- * @Date 2020/4/24 7:36 PM
+ * @Description TODO
+ * @Date 2021-07-19 22:10
  * @Version 1.0
  **/
 public class TwoDimenArrayIterator {
 
-    /**
-     * 问题描述
-     *
-     * 编写一个二维数组迭代器，包含两个方法
-     * 1 hasNext()
-     * 2 next()
-     */
+	private int[][] data;
 
-    /**
-     * 解题思路
-     *
-     */
+	private int row;
 
-    public static void main(String[] args) {
-        Integer[][] arr = {{1, 2, 3}, {4, 5}, {}, {}, {6, 7}};
+	private int column;
 
-        Iterator iterator = new Iterator(arr);
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
-    }
+	public TwoDimenArrayIterator(int[][] data) {
+		this.data = data;
+		this.row = 0;
+		this.column = 0;
+	}
 
-    public static class Iterator {
+	public boolean hasNext() {
+		return row < data.length && column < data[row].length;
+	}
 
-        private List<List<Integer>> data;
+	public int next() {
+		int value = data[row][column];
 
-        private int row;
+		column++;
+		if (column == data[row].length) {
+			row++;
+			column = 0;
+		}
 
-        private int col;
+		// 跳过空行
+		while (row < data.length && data[row].length == 0) {
+			row++;
+		}
 
-        public Iterator(List<List<Integer>> data) {
-            this.data = data;
-            this.row = 0;
-            this.col = 0;
-        }
+		return value;
+	}
 
-        public Iterator(Integer[][] arr) {
-            if (arr == null) {
-                throw new RuntimeException("empty arr...");
-            }
+	public static void main(String[] args) {
+		int[][] data = { { 1, 2, 3 }, { 4, 5 }, {}, {}, { 6, 7 }, {} };
 
-            this.data = new ArrayList<>();
-            for (Integer[] item : arr) {
-                List<Integer> list = Arrays.asList(item);
-                this.data.add(list);
-            }
+		for (int i = 0; i < data.length; i++) {
+			for (int j = 0; j < data[i].length; j++) {
+				System.out.print(data[i][j] + " ");
+			}
+			System.out.println();
+		}
+		System.out.println();
 
-            this.row = 0;
-            this.col = 0;
-        }
+		TwoDimenArrayIterator iterator = new TwoDimenArrayIterator(data);
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
 
-        public boolean hasNext() {
-            for (int i = this.row; i < data.size(); i++) {
-                for ( int j = this.col; j <= data.get(i).size(); j++) {
-                    if (j == data.get(i).size()) {
-                        this.col = 0;
-                        break;
-                    }
-
-                    if (data.get(i).get(j) != null) {
-                        this.row = i;
-                        this.col = j;
-                        return true;
-                    }
-
-                }
-            }
-
-            return false;
-        }
-
-        public Integer next() {
-            Integer ret = this.data.get(this.row).get(this.col);
-            this.col++;
-            return ret;
-        }
-
-    }
+		//System.out.println(data[1][0]);
+	}
 
 }
-
-

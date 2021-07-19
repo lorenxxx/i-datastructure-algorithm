@@ -22,7 +22,7 @@ public class PayChange {
      * 解题思路
      *
      * 先用面值最大的来支付，如果不够，就继续用更小一点面值的，以此类推，最后剩下的用 1 元来补齐。
-     * 在贡献相同期望值（纸币数目）的情况下，我们希望多贡献点金额，这样就可以让纸币数更少，这就是一种贪心算法的解决思路。
+     * 在贡献相同期望值（纸币张数）的情况下，我们希望多贡献点金额，这样就可以让纸币数更少，这就是一种贪心算法的解决思路。
      */
 
     /**
@@ -41,7 +41,7 @@ public class PayChange {
             return null;
         }
 
-        if (total < 0) {
+        if (total <= 0) {
             return null;
         }
 
@@ -49,6 +49,7 @@ public class PayChange {
 
         int tmpTotal = 0;
         for (int i = 0; i < moneyValue.length && tmpTotal < total; i++) {
+            // 循环当前面值的纸币有多少张
             for (int j = 0; j < moneyCount[i]; j++) {
                 if (tmpTotal + moneyValue[i] <= total) {
                     tmpTotal += moneyValue[i];
@@ -65,6 +66,8 @@ public class PayChange {
     public static void main(String[] args) {
         int[] moneyCount = {1, 5, 5, 5, 5, 5, 5};
         int total = 298;
+
+        System.out.println(Arrays.toString(moneyCount));
 
         int[] ret = PayChange.payChange(moneyCount, total);
         System.out.println(Arrays.toString(ret));

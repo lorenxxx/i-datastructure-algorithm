@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Arrays;
+
 /**
  * @ClassName Maze
  * @Desciption 用BFS求解迷宫问题
@@ -42,7 +44,12 @@ public class Maze {
     /**
      * 上下左右移动的偏移量
      */
-    private int[][] move = {{-1, 0}, {0, -1}, {1, 0}, {0, 1}};
+    private int[][] move = {
+            {-1, 0},
+            {0, -1},
+            {1, 0},
+            {0, 1}
+    };
 
     /**
      * 路径
@@ -81,6 +88,8 @@ public class Maze {
 
             head++;
         }
+
+        System.out.println(Arrays.toString(q));
 
     }
 

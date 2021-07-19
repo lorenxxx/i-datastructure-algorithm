@@ -160,8 +160,8 @@ public class KingAndGoldMine {
     /**
      * 动态规划解法
      *
-     * @param n
-     * @param w
+     * @param n 金矿数量
+     * @param w 人数
      * @param g 数组g中存储每座金矿的金子数
      * @param p 数组p中存储挖每座金矿需要的工人数
      * @return 该方法返回工人数为w时挖数组g中前n座金矿所能得到的最大金矿数
@@ -231,7 +231,7 @@ public class KingAndGoldMine {
         int[] p = {5, 5, 3, 4, 3};
         System.out.println(getMaxGold(5, 10, g, p));
         System.out.println(getMaxGold2(5, 10, g, p, new HashMap<>()));
-        System.out.println(getMaxGold3(5, 9, g, p));
+        System.out.println(getMaxGold3(5, 10, g, p));
     }
 
 }

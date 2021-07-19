@@ -29,21 +29,6 @@ public class Sweets {
      * 2、对糖果需求更小的孩子更容易被满足，所以优先从需求小的孩子进行分配，因为满足一个需求小的孩子和满足一个需求大的孩子对期望值的贡献是一样的
      */
 
-    /**
-     * 表示糖果的大小
-     */
-    private int[] sweets = {1, 3, 3, 5, 6};
-
-    /**
-     * 表示孩子对糖果的需求
-     */
-    private int[] children = {1, 2, 4, 5, 7, 9, 6};
-
-    /**
-     * 表示分配方案
-     */
-    private int[] solution = new int[children.length];
-
     public static int[] assign(int[] sweets, int[] children) {
         // 边界校验
         if (sweets == null || sweets.length == 0) {
@@ -84,10 +69,21 @@ public class Sweets {
     }
 
     public static void main(String[] args) {
+        /**
+         * 表示糖果的大小
+         */
         int[] sweets = {1, 3, 3, 5, 6};
+
+        /**
+         * 表示分配方案
+         */
         int[] children = {1, 2, 4, 5, 7, 9, 6};
 
+        /**
+         * 表示分配结果
+         */
         int[] ret = Sweets.assign(sweets, children);
+
         System.out.println(Arrays.toString(ret));
     }
 
