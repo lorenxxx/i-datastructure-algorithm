@@ -23,14 +23,12 @@ public class LengthOfLIS {
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] < nums[i - 1]) {
                 left = i;
-            } else {
-                if (i - left > max) {
-                    max = i - left;
-                }
             }
+
+            max = Math.max(max, i - left + 1);
         }
 
-        return max + 1;
+        return max;
     }
 
     public static void main(String[] args) {

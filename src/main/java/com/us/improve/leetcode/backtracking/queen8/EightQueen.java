@@ -27,6 +27,7 @@ public class EightQueen {
             if (isOk(row, column)) {
                 result[row] = column;
                 cal8Queens(row + 1);
+                result[row] = 0;
             }
         }
     }

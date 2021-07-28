@@ -1,4 +1,4 @@
-package com.us.improve.leetcode.singlylinkedlist;
+package com.us.improve.leetcode.linkedlist;
 
 /**
  * @ClassName ReverseList
@@ -24,20 +24,21 @@ public class ReverseList {
     /**
      * 非递归实现
      *
-     * @param head
+     * @param node
      * @return
      */
-    public static Node reverseList1(Node head) {
-        if (head == null || head.getNext() == null) {
-            return head;
+    public static Node reverseList1(Node node) {
+        if (node == null || node.next == null) {
+            return node;
         }
 
         Node pre = null;
-        Node cur = head;
+        Node cur = node;
         while (cur != null) {
-            Node next = cur.getNext();
+            Node next = cur.next;
 
-            cur.setNext(pre);
+            cur.next = pre;
+
             pre = cur;
             cur = next;
         }
@@ -52,15 +53,18 @@ public class ReverseList {
      * @return
      */
     public static Node reverseList2(Node head) {
-        if (head == null || head.getNext() == null) {
+        if (head == null || head.next == null) {
             return head;
         }
 
-        Node reHead = reverseList2(head.getNext());
-        head.getNext().setNext(head);
-        head.setNext(null);
+        Node next = head.next;
 
-        return reHead;
+        Node newHead = reverseList2(next);
+
+        next.next = head;
+        head.next = null;
+
+        return newHead;
     }
 
     public static void main(String[] args) {

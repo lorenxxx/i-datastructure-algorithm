@@ -26,7 +26,6 @@ public class BinarySearchPractice2 {
 		int right = arr.length - 1;
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
-
 			if (arr[mid] == value) {
 				return mid;
 			} else if (arr[mid] < value) {
@@ -53,7 +52,7 @@ public class BinarySearchPractice2 {
 			return -1;
 		}
 
-		return doBSearch2(arr,0, arr.length - 1, value);
+		return doBSearch2(arr, 0, arr.length - 1, value);
 	}
 
 	private int doBSearch2(int[] arr, int left, int right, int value) {
@@ -65,7 +64,7 @@ public class BinarySearchPractice2 {
 		if (arr[mid] == value) {
 			return mid;
 		} else if (arr[mid] < value) {
-			return doBSearch2(arr,mid + 1, right, value);
+			return doBSearch2(arr, mid + 1, right, value);
 		} else {
 			return doBSearch2(arr, left, mid - 1, value);
 		}
@@ -91,7 +90,7 @@ public class BinarySearchPractice2 {
 				if (mid == 0 || arr[mid - 1] != value) {
 					return mid;
 				} else {
-					right = mid -1;
+					right = mid - 1;
 				}
 			} else if (arr[mid] < value) {
 				left = mid + 1;
@@ -119,7 +118,6 @@ public class BinarySearchPractice2 {
 		int right = arr.length - 1;
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
-
 			if (arr[mid] == value) {
 				if (mid == arr.length - 1 || arr[mid + 1] != value) {
 					return mid;
@@ -152,7 +150,6 @@ public class BinarySearchPractice2 {
 		int right = arr.length - 1;
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
-
 			if (arr[mid] >= value) {
 				if (mid == 0 || arr[mid - 1] < value) {
 					return mid;

@@ -16,11 +16,11 @@ import lombok.NoArgsConstructor;
 @Data
 public class Node {
 
-    private int data;
+    public int data;
 
-    private Node left;
+    public Node left;
 
-    private Node right;
+    public Node right;
 
     public Node(int data) {
         this(data, null, null);

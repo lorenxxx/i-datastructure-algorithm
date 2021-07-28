@@ -116,7 +116,7 @@ public class BinaryTree {
      *
      * @param node
      */
-    public void levelOrder(Node node) {
+    public void levelOrder1(Node node) {
         if (node == null) {
             return;
         }
@@ -138,7 +138,5 @@ public class BinaryTree {
             }
         }
     }
-
-
 
 }

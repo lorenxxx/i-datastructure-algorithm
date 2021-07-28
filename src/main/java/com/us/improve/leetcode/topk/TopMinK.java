@@ -28,34 +28,12 @@ public class TopMinK {
      */
 
     public static Integer[] getTopMinK(Integer[] arr, int k) {
-        // 边界判断省略...
-
-        // Java 的 PriorityQueue 默认是小顶堆，添加 comparator 参数使其变成最大堆
-        Queue<Integer> heap = new PriorityQueue<>(k, (i, j) -> Integer.compare(j, i));
-
-        for (int item : arr) {
-            if (heap.isEmpty() || heap.size() < k || item < heap.peek()) {
-                heap.offer(item);
-            }
-        }
-
-        Integer[] ret = heap.toArray(new Integer[heap.size()]);
-        return ret;
-    }
-
-    /**
-     * 练习
-     *
-     * @param arr
-     * @param k
-     * @return
-     */
-    public static Integer[] getTopMinK2(Integer[] arr, int k) {
-        if (arr == null || arr.length <= k) {
+        // 边界判断
+        if (arr.length <= k) {
             return arr;
         }
 
-        // Java的PriorityQueue默认是小顶堆，添加comparator参数使其变成大顶堆
+        // Java 的 PriorityQueue 默认是小顶堆，添加 comparator 参数使其变成最大堆
         Queue<Integer> heap = new PriorityQueue<>(k, (i, j) -> Integer.compare(j, i));
 
         for (int item : arr) {
@@ -72,7 +50,6 @@ public class TopMinK {
         Integer[] arr = {8, 2, 5, 3, 7, 10, 21, 5, 12};
         int k = 5;
         System.out.println(Arrays.toString(getTopMinK(arr, k)));
-        System.out.println(Arrays.toString(getTopMinK2(arr, k)));
     }
 
 

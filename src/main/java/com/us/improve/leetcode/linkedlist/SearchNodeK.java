@@ -1,4 +1,4 @@
-package com.us.improve.leetcode.singlylinkedlist;
+package com.us.improve.leetcode.linkedlist;
 
 /**
  * @ClassName SearchNodeK

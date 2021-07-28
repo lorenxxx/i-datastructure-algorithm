@@ -17,7 +17,6 @@ public class SortPractice2 implements ISort {
 		}
 
 		for (int i = 0; i < arr.length; i++) {
-			// 提前退出冒泡循环的标志位
 			boolean flag = false;
 
 			for (int j = 0; j < arr.length - i - 1; j++) {
@@ -26,12 +25,10 @@ public class SortPractice2 implements ISort {
 					arr[j] = arr[j + 1];
 					arr[j + 1] = tmp;
 
-					// 表示有数据交换
 					flag = true;
 				}
 			}
 
-			// 如果没有数据交换，则提前退出冒泡循环
 			if (!flag) {
 				break;
 			}
@@ -45,11 +42,9 @@ public class SortPractice2 implements ISort {
 		}
 
 		for (int i = 1; i < arr.length; i++) {
-			// 待插入的数据
 			int value = arr[i];
-			int j = i - 1;
 
-			// 寻找合适的插入位置
+			int j = i - 1;
 			while (j >= 0 && arr[j] > value) {
 				arr[j + 1] = arr[j];
 				j--;
@@ -61,13 +56,14 @@ public class SortPractice2 implements ISort {
 
 	@Override
 	public void shellSort(int[] arr) {
-		if (arr == null || arr.length <= 1) {
+		if (arr == null || arr.length <= 0) {
 			return;
 		}
 
 		for (int step = arr.length / 2; step >= 1; step /= 2) {
 			for (int i = step; i < arr.length; i++) {
 				int value = arr[i];
+
 				int j = i - step;
 				while (j >= 0 && arr[j] > value) {
 					arr[j + step] = arr[j];
@@ -142,7 +138,6 @@ public class SortPractice2 implements ISort {
 		}
 	}
 
-
 	@Override
 	public void quickSort(int[] arr) {
 		if (arr == null || arr.length <= 1) {
@@ -161,23 +156,23 @@ public class SortPractice2 implements ISort {
 		int j = right;
 		int pivot = arr[left + (right - left) / 2];
 
-		while (i <= j) {
-			while (arr[i] < pivot) {
-				i++;
+		while (left <= right) {
+			while (arr[left] < pivot) {
+				left++;
 			}
-			while (arr[j] > pivot) {
-				j--;
+			while (arr[right] > pivot) {
+				right--;
 			}
 
-			if (i < j) {
-				int tmp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = tmp;
+			if (left < right) {
+				int tmp = arr[left];
+				arr[left] = arr[right];
+				arr[right] = tmp;
 
-				i++;
-				j--;
-			} else if (i == j) {
-				i++;
+				left++;
+				right--;
+			} else if (left == right) {
+				left++;
 			}
 		}
 
